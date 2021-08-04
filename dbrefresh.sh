@@ -1,7 +1,7 @@
 #!/bin/bash
-#Database refresh script using FIFO
+# Progress database restore script using FIFO
 VERSION=1.0.0
-USAGE="Usage    : $0 <backup.gz> <database> <environment> \nExample: $0 /backup/mfgdb.bak.gz /devl/db/devldb/devldb devl"
+USAGE="Usage    : $0 <DBbackup.gz> <Target DB> <environment> \nExample: $0 /backup/mfgdb.bak.gz /devl/db/devldb/devldb"
 DESCRIPTION="Refresh a database from backup using FIFO"
 
 #Check parameter and proenv
@@ -16,7 +16,7 @@ fi
 
 
 #Create FIFO
-FIFO1=/tmp/FIFO-kfp
+FIFO1=/tmp/${RANDOM}
 mkfifo $FIFO1
 
 #Unzip and restore DB using FIFO
