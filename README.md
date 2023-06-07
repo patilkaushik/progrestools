@@ -1,2 +1,2 @@
 # progrestools
-My collection of scripts and 4GL queries for Progress Database Administration.
+Collection of Shell scripts and 4GL queries for Progress Database Administration.
